@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>LingoFlex</h1>
+        <div class="header-div">
+           
+            <ul class="header_menu">
+                <li><a href="index.html">Home</a></li>
+                
+                <li id="sub-menu"><a href="" id="courses_links">Kurse</a><span class="material-symbols-outlined"> arrow_drop_down</span>
+                    <ul class="dropdown-content">
+                    <li><a href="german_course.html">Deutsch</a></li>
+                    <li><a href="english_course.html">Englisch</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="#">Über uns</a></li>
+                <li><a href="job.html">Job</a></li>
+                <li><a href="#footer-contacts">Kontakt</a></li>
+                            
+            </ul> 
+            <div class="hamburger_menu">
+                <div is="line1"></div>
+                <div is="line1"></div>
+                <div is="line1"></div>  
+        </div>
+            
+                
+        
+            
+            </div>
+           
+        
+
+    </header>
+    <script>
+             const hamMenu=document.querySelector('.hamburger_menu');
+            const flex_menu=document.querySelector('.header_menu');
+            const common_header_div=document.querySelector('.header-div');
+            const dropdown_content=document.querySelector('.dropdown-content');
+            
+            
+            const courses_links=document.querySelector('#courses_links');
+        
+            hamMenu.addEventListener('click',()=>{
+            
+                hamMenu.classList.toggle('active');
+                flex_menu.classList.toggle('active');
+                common_header_div.classList.toggle('active');
+                dropdown_content.classList.remove('visible');
+                courses_links.classList.remove('clicked');
+                
+            })
+            
+    
+            
+            courses_links.addEventListener('click',()=>{
+                
+                if (document.documentElement.clientWidth< 955) {
+                    event.preventDefault();
+                courses_links.classList.toggle('clicked');
+                dropdown_content.classList.toggle('visible');
+                 
+            }
+
+                
+                
+            })
+    
+            
+            
+        </script> 
+</body>
+</html>

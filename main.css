@@ -1,0 +1,247 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.image_block{
+    clip-path: url('learn.jpg');
+
+    margin: auto;
+    background: url('learn.jpg');
+    max-width: 1100px;
+    height: 500px;
+    background-size: cover;
+   /* Scale the image to cover the entire section */
+    background-position: center -20px ; /* Center the image within the section */
+    background-repeat: no-repeat;
+    border-color: brown;
+    
+
+    
+
+}
+body{
+    padding: 0;
+}
+
+/*______________________________________Other______________________________________________*/
+hr{
+    border:1px solid aqua;
+    margin: 10px;
+    width:100%
+    
+}
+section{
+    margin: 20px;
+}
+/*_______________________________________________Advantages_____________________________________*/
+.grid-advantages{
+    
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 80px 150px 150px;
+    border:3px solid aqua;
+}
+#title-grid{
+    grid-column: 1/3;
+    grid-row: 1/2
+
+}
+#flexible{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+#spaß{
+    grid-column: 2/3;
+    grid-row:2/3;
+}
+#efficient{
+    grid-column:1/2;
+    grid-row:3/4
+}
+#praxis{
+    grid-column:2/3;
+    grid-row:3/4;
+}
+.grid-advantages div{
+    text-align: center ;
+}
+.grid-block{
+    border: 1px solid aqua;
+    margin: 4px;
+}
+#title-grid h1{
+    padding: 10px;
+    
+}
+#title-grid{
+    padding-top: 10px;
+    
+    
+    
+}
+@media(max-width:631px){
+    .grid-advantages{
+        display: flex;
+        flex-direction: column;
+    }
+    .grid-advantages div{
+        padding: 10px;
+        border: none ;
+        border-bottom: 2px solid aqua;
+    }
+    #praxis{
+        border:none;
+    }
+}
+
+/*__________________________________________Slider_______________________________________________*/
+
+.a{
+    background-color: brown;
+}
+.slide-controller{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    width: 100%;
+    border: 2px solid aqua;
+    
+
+    
+}
+.slider{
+    display:flex;
+    width: fit-content;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-direction: row;
+
+    
+
+}
+.slide-container{
+    margin: 20px 0px ;
+    
+    display:flex;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-direction: row;
+    width:100vw;
+    height: fit-content;
+    flex-wrap: nowrap;
+    background-color: aqua;
+    overflow: hidden;
+    
+    
+
+
+}
+
+.img-container{  
+    border-radius: 50%;
+    max-width: 70px;
+    height: 70px;
+    border: 4px solid rgb(6, 216, 216);
+    
+}
+
+.img-card{
+    height: 100%;
+    width:100% ;
+    border-radius: 50%;
+    object-fit: cover;
+    }
+    
+    .card-container{
+        display: flex;
+        flex-direction: column;
+        background-color: lightcyan;
+        min-width: 100%;
+        align-items: center;
+        justify-content: center;
+        min-height: 200px;
+        border-radius: 60%;
+        
+        
+    }
+    .rewiew-container{
+        width: 85%;
+        display:flex;
+        min-height: auto;
+        flex-direction: column;
+        
+
+    }
+    .rewiew-container p ,h3{
+    margin: 4px;
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 10px;
+
+        
+    }
+    #reviews p{
+    
+        margin-bottom: 5vh;
+    
+    }
+    #reviews>h2{
+        text-align: center;
+        margin: 5px;
+    }
+    #reviews{
+        margin: 10px;
+    }
+    .dots{
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        gap:15px;
+        
+    }
+    .dots li.selected{
+        background:transparent;
+
+    }
+   
+    .dots li{
+        cursor: pointer;
+        list-style: none;
+        border-radius: 50%;
+        border: 2px solid grey;
+        width: 20px;
+        height: 20px;
+        background:gray;
+    }
+    .arrow{
+        cursor: pointer;
+    }
+   
+        @media(max-width:600px){
+        
+        .arrow{
+            height: 50px;
+            width: 50px;
+            margin: 0px;
+        }
+        
+        
+
+    }
+    
+
+
+
+
+
+
+            /*--------------------Header------------------------------------------------------*/
+       
+            
+
+
+    /*____________________Footer______________*/
+   

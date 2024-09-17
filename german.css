@@ -1,0 +1,150 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    
+
+    
+    
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+main{
+    display: flex;
+width: 100%;
+height: 100vh;
+
+}
+section{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    justify-content:start;
+    background-color: white;
+    flex:5;
+    height: 100vh;
+    width: 90%;
+    padding-top: 100px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: bisque;
+
+
+    box-sizing: border-box;
+    
+    
+}
+#test_link{
+    text-align: center;
+
+}
+aside{
+    background-color: aqua;
+    height: 100vh;
+    flex:3;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+    
+    
+}
+table{
+    
+    width: 100%;
+    height: 400px;
+    padding: 50px;
+}
+table caption{
+    margin-top: 50px;
+    margin-bottom: 15px;
+    font-size: 25px;
+    font-weight: bold;
+}
+table .td_but{
+text-align:center;
+
+}
+
+td, tr {
+    margin: 5px;
+    background-color: azure;
+}
+ td, tr,th{
+    border: 2px solid rgb(16, 179, 239);
+}
+table{
+    border-top: 2px solid rgb(16, 179, 239);
+    border-bottom: 2px solid rgb(16, 179, 239);
+}
+#pdf_but{
+    border: aqua;
+    box-shadow:5px 5px 5px  rgb(36, 36, 147);
+    margin: 0px;
+    height: 50px;
+    width: 100px;
+    margin: 8px;
+}
+#einstuf_but{
+    
+    font: 1em sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    background-color:white;
+    
+    border: 4px solid aqua;
+    margin: 0px;
+    height: 150px;
+    width: 210px;
+    margin: 8px;
+
+    padding: 3px;
+    box-sizing: border-box;
+}
+h1{
+    font-size: 40px;
+}
+@media(max-width:800px){
+    section{
+        
+        
+        padding: 0px;
+        gap: 0;
+    
+        
+    }
+    section h1{
+        font-size: 20px;
+        width:fit-content; 
+         
+        
+
+    }
+    section p{
+        width:fit-content;
+    height: fit-content;
+    margin: 5vw; 
+
+}
+main{
+    flex-direction: column;
+    height: fit-content;
+}
+main *{
+    width: 100vw;
+    height: fit-content;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
