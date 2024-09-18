@@ -44,7 +44,7 @@ form{
     display:flex;
     flex-direction: column;
     justify-content:space-between;
-    gap:2px;
+    gap:3px;
     width:40%;
     margin-left: 40px;
     
