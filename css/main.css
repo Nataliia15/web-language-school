@@ -8,7 +8,6 @@
     max-width: 1100px;
     height: 500px;
     background-size: cover;
-   /* Scale the image to cover the entire section */
     background-position: center -20px ; /* Center the image within the section */
     background-repeat: no-repeat;
     border-color: brown;
@@ -17,9 +16,7 @@
     
 
 }
-body{
-    padding: 0;
-}
+
 
 /*______________________________________Other______________________________________________*/
 hr{

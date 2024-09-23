@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="css/job.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+        </script>
+    <title>LingoFlex</title>
+</head>
+<body>
+    <!------------------------------------------------------Header---------------------------------------------------->
+   
+     <div id="header"></div>
+     <script type="text/javascript">
+      $(function(){
+         $('#header').load('header.html');
+       }); 
+     </script>
+    
+        <!-----------------------------------------------------Main--------------------------------------------------------->
+        <main>
+          
+            <div id="job_offers"></div>
+            <section id="bew_prozess">
+            <h1>Bewerbungsprozess</h1>
+            <div id="steps_block">
+              
+
+              <div class="step-container">  
+            <div class="step">1</div>
+            <div class="text">
+            <h3>Bewerbung</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur </p>
+            </div>
+              </div>
+              <div class="step-container">
+            <div class="step">2</div>
+            <div class="text">
+            <h3>Prüfung</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perfer</p>
+              </div>
+              </div>
+              <div class="step-container">
+            
+            <div class="step">3</div>
+            <div class="text">
+            <h3>Interview</h3>
+            <p>Lorem ipsum, g elit. Perfer</p>
+              </div>
+            </div>
+              <div class="step-container">
+            
+            <div class="step">4</div>
+            <div class="text">
+            <h3>Unsere Entscheidung</h3>
+            <p>Lorem ipsum, dolor sit amet. Perfer</p>
+              </div>
+              </div>
+              <div class="step-container">
+            
+              <div class="step" id="last">5</div>
+              <div class="text">
+              <h3>Ihr Start</h3>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perfer</p>
+              </div>
+              </div>
+            </section>
+          
+        </main>
+   
+<!-------------------------------------------------------------Footer--------------------------------------------------->
+    <div id="footer"></div>
+    <script type="text/javascript">
+        $(function(){
+          $('#footer').load('footer.html');
+        }); 
+      </script>
+</body>
+</html>

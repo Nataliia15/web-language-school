@@ -1,0 +1,113 @@
+*{
+    padding:0;
+    margin: 0;
+}
+body{
+    display:flex;
+    flex-direction: column;
+    height: 100vh; 
+    box-sizing: border-box;   
+    
+
+}  
+
+main{
+    flex:1;    
+}
+
+   
+
+
+#job_offers{
+
+    
+}
+#steps_block{   
+display: flex;
+justify-content: center;
+margin-left: 3vw;
+margin-right: 3vw;
+
+    
+}
+.step-container{
+    display:flex;
+    flex-direction: column;
+    width:20vw;
+    height:fit-content;
+    padding: 1vw;
+    box-sizing: border-box;    
+}
+.step-container .text{
+    width:18vw;
+    padding: 3px;
+
+}
+
+#bew_prozess h1{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+
+}
+
+.step{
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    width:3vw;
+    height: 3vw;
+    position: relative;
+    box-sizing: border-box;
+
+}
+.step:not(#last)::after{
+    content: ' ';
+    position: absolute;
+    height:2px;
+    width: 17vw;
+    left:100%;
+    background-color: black;
+
+    
+}
+
+#footer{
+    flex:0;
+    
+}
+@media(max-width:600px){
+    #steps_block{
+        flex-direction: column;
+        align-items: center;
+        gap:4vh;
+       
+    }
+    .step-container{
+        flex-direction: row;
+        width: 100%;
+        height: 4vh;
+        gap:2vw;
+       box-sizing: border-box; 
+
+    }
+    .step-container .text{
+        width:100%;
+    }
+    
+    .step:not(#last)::after{
+        box-sizing: border-box;
+        transform: rotate(90deg);
+        transform-origin: top left;
+        left: 1.5vw;
+        bottom:0;
+        width:calc(4vh + 4vh);
+        z-index: -1;
+        
+        
+    }
+
+}

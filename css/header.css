@@ -1,14 +1,14 @@
-.material-symbols-outlined{
-    color: white;
-    position: relative;
-    
-}
+
 .material-symbols-outlined {
     font-variation-settings:
     'FILL' 0,
     'wght' 400,
     'GRAD' 0,
-    'opsz' 24
+    'opsz' 24;
+    color: white;
+    position: absolute;
+    
+
   }
   
 .hamburger_menu{
@@ -229,6 +229,7 @@ header h1{
     }
     #courses_links.clicked{
         text-decoration: underline;
+    
     }
     
     .dropdown-content.visible li a{
