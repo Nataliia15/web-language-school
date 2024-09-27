@@ -1,4 +1,7 @@
-
+*{padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    }
 .material-symbols-outlined {
     font-variation-settings:
     'FILL' 0,
@@ -30,6 +33,7 @@ header{
     background-color: aqua;
     margin: 0;
     padding: 0;
+    width: 100vw;
 }
 .header-div{
     display: flex;
@@ -40,6 +44,7 @@ header{
     padding-left: 50px;
     height: 70px;
     box-sizing: border-box;
+    width: 100vw;
     
     
     
@@ -138,11 +143,7 @@ header h1{
     
     
     
-    section{
-        padding-top: 3vh;
-        padding-bottom: 3vh;
-    }
-
+    
    
     
 

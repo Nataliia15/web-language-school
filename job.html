@@ -6,6 +6,7 @@
     <link rel="stylesheet"  href="css/job.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+    <script src="components/job_offer_card.js" type="module"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
         </script>
     <title>LingoFlex</title>
@@ -23,7 +24,29 @@
         <!-----------------------------------------------------Main--------------------------------------------------------->
         <main>
           
-            <div id="job_offers"></div>
+          
+            <section id="job_offers">
+              <h1>Job Angebote</h1>
+              
+              <div id="job_offer_cards_container">
+          
+              <job-offer-card link-attr="index.html">
+              <h5 slot="title">Deutschlehrkraft</h5>
+              <a href="test_register.html" ></a>
+              </job-offer-card>
+              <job-offer-card link-attr="german_course.html">
+              <h5 slot="title">Englischlehrkraft</h5>
+              </job-offer-card>
+              <job-offer-card>
+              <h5 slot="title">Empfangkraft</h5>
+              </job-offer-card>
+              </div>
+              <a href="#">
+              <button>Bewerben</button>
+              </a>
+          </section>
+           
+            <!-----------------------------------------Timeline---------------------------------->
             <section id="bew_prozess">
             <h1>Bewerbungsprozess</h1>
             <div id="steps_block">
@@ -78,5 +101,6 @@
           $('#footer').load('footer.html');
         }); 
       </script>
+       
 </body>
 </html>
