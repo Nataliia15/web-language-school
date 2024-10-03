@@ -10,16 +10,15 @@ body{
     min-height: 100vh;
     
 }
-main{
-    flex:1;
 
-}
 
 
 main{
     background-color:lightcyan;
     height: 100%;
     padding: 40px;
+    flex:1;
+    position: relative;
     
 }
 .content{
@@ -56,6 +55,7 @@ form{
 }
 form input, select{
     height: 25px;
+    
 }
 form textarea{
     height: 70px;

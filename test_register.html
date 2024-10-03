@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/test_register.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+    <script src="components/pop-up.js" type="module"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
         </script>
     
@@ -22,10 +23,10 @@
         </script>
     <!---------------------------------------------Form------------------------------------------------------------------------------>
    <main>
-    
+   
     <h1>Sich für einen Einstufungstest anmelden</h1>
     <div class="content">
-    <form action="" method="post">
+    <form  method="post" id="form">
         <label for="salutation" class="required">Anrede</label>
         <select name="salutation" id="salutation" required>
             <option>Frau</option>
@@ -53,8 +54,48 @@
     
     <img src="img/test.jpg" id="test_pic">
     </div>
+
    </main>
-    </div>
+   <script>
+    const form=document.querySelector('#form');
+    form.addEventListener('submit', event=>{
+        event.preventDefault();
+        const formData=new FormData(form);
+        const data=new URLSearchParams(formData);
+        /*for (const [key, value] of formData.entries()) {
+            data.append(key, value);}*/
+        fetch("http://localhost:8080/api/student-applications",{
+            method:'POST',
+            headers:{
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: data
+        })
+    .then(res=>{
+        const status=res.status;
+        console.log("Staus is :" +status);
+        return res.text()
+        .then(message => ({ status, message }));})
+        .then(({ status, message })=>{
+            const popup=document.createElement('pop-up');
+            popup.show(message,status);
+            document.body.appendChild(popup);
+            form.reset();
+    
+
+        }).catch(err => console.error('Error:', err));
+        
+        
+
+
+
+
+    });
+    
+
+   </script>
+
+    
      <!-----------------------------------------Footer---------------------------------------------------------------------------->
      <div id="footer"></div>
      
