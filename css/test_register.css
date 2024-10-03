@@ -12,8 +12,22 @@ body{
 }
 main{
     flex:1;
+    position: relative;
 
 }
+/*----------------------------Popup------------------------------------------------*/
+.popup_container{
+    size: auto;
+    z-index: 100;
+    z-index: 20;
+    position: absolute;
+    top: 20%; 
+    left: 50%;
+    transform: translate(-50%,0);
+    background-color: white;
+    border-radius: 30px;}
+
+/*-----------------------------------------------------------------------------------*/
 
 
 main{
@@ -56,6 +70,7 @@ form{
 }
 form input, select{
     height: 25px;
+    
 }
 form textarea{
     height: 70px;
