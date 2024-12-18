@@ -1,3 +1,7 @@
+### Description
+Responsive frontend of the web application for a speaking school..  
+The backend for apply_job.html can be found under the [link](https://github.com/Nataliia15/job_platform_lang_school), and for german_course.html under the [link](https://github.com/Nataliia15/language-school-studentbase).  
+
 ### The sources of the images used in the project are provided in the following links:
 + [learn.jpg](https://www.freepik.com/free-photo/colleagues-studying-together-group-study_21076656.htm#query=study%20group&position=1&from_view=keyword&track=ais_hybrid&uuid=31e0bfb3-142b-4c7a-9743-a09875d7176a) 
 + [foto_1_fem.jpg](https://pixabay.com/de/photos/m%C3%A4dchen-curly-portrait-teen-h%C3%BCbsch-3901714/)

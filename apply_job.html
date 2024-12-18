@@ -41,12 +41,12 @@
                 <input type="text" id="name" name="name" maxlength="30" minlength="3">
                 <label for="surname" class="required">Nachname</label>
                 <input type="text" id="surname" name="surname" maxlength="30" minlength="3" required>
-                <label for="birthday">Birthday:</label>
-                <input type="date" id="birthday" name="birthday">
+                <label for="birthday" class="required">Birthday:</label>
+                <input type="date" id="birthday" name="birthday" required>
                 <label for="email" class="required">Email</label>
                 <input type="email" id="email" name="email" maxlength="30" required>
                 <label for="tel" class="required"> Telefonnummer</label>
-                <input type="tel" id="tel" name="phonenumber" maxlength="30" required>
+                <input type="number" id="tel" name="phonenumber" maxlength="30" required>
             </div>
             <div>
                 <label for="position" class="required">Offene Stelle</label>
@@ -114,7 +114,7 @@
                 listOfFiles.forEach(file => {
                     formData.append("certificates", file);
                 });
-                fetch("http://localhost:8080/api/apply", {
+                fetch("http://localhost:8081/api/apply", {
                     method: 'POST',
                     body: formData
                 })
