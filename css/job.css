@@ -132,6 +132,7 @@ margin-right: 3vw;
         flex-direction: column;
         align-items: center;
         gap:4vh;
+        margin-bottom: 20px;
        
     }
     .step-container{
@@ -156,6 +157,9 @@ margin-right: 3vw;
         z-index: -1;
         
         
+    }
+    #bew_prozess{
+        margin-bottom: 20px;
     }
 
 }

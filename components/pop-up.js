@@ -13,17 +13,18 @@
     align-items:end;
     justify-content: center;
     background-color:lightcyan;
-    width:200px;
-    height:80px;
+    width:fit-content;
+    min-height:80px;
     border-radius:30px;
-    padding: 12px;
+    padding: 12px 30px;
     box-shadow: 0 0 10px -5px  ;
     background-color:white;
     z-index:2000;
-    position: absolute;
+    position: fixed;
     top: 20%; 
     left: 50%;
     transform: translate(-50%,0);
+    font-size:20px;
 
 
     }
@@ -71,13 +72,14 @@
         }else if (status==500) {
             messageEl.style.color='red'
             
-        } else if(status==409){
+        } else if(status==400){
             messageEl.style.color='orange'
         }
         this.overlay=document.createElement('div');
         this.overlay.id='overlay';
         document.body.appendChild(this.overlay);
         document.body.appendChild(this);
+        console.log("Added");
     }
     close(){
         if (this.overlay) {

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/apply_job.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="components/pop-up.js" type="module"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+        </script>
+
+    <title>Document</title>
+
+</head>
+
+<body>
+    <!-----------------------------------Header-------------------------------------------------------->
+    <div id="header"></div>
+    <script type="text/javascript">
+        $(function () {
+            $('#header').load('header.html');
+        });
+    </script>
+    <!---------------------------------------------Form------------------------------------------------------------------------------>
+    <main>
+
+        <h1>Bewerbung</h1>
+
+        <form action="" method="post" enctype="multipart/form-data" id="apply_form">
+            <div>
+
+                <label for="salutation" class="required">Anrede</label>
+                <select name="salutation" id="salutation" required>
+                    <option>Frau</option>
+                    <option>Herr</option>
+                </select>
+                <label for="name" class="required">Vorname</label>
+                <input type="text" id="name" name="name" maxlength="30" minlength="3">
+                <label for="surname" class="required">Nachname</label>
+                <input type="text" id="surname" name="surname" maxlength="30" minlength="3" required>
+                <label for="birthday">Birthday:</label>
+                <input type="date" id="birthday" name="birthday">
+                <label for="email" class="required">Email</label>
+                <input type="email" id="email" name="email" maxlength="30" required>
+                <label for="tel" class="required"> Telefonnummer</label>
+                <input type="tel" id="tel" name="phonenumber" maxlength="30" required>
+            </div>
+            <div>
+                <label for="position" class="required">Offene Stelle</label>
+                <select id="position" name="position" required>
+                    <option>Lehrkraft Deutsch</option>
+                    <option>Lehrkraft Englisch</option>
+                    <option>Emfangkraft</option>
+                </select>
+                <label for="cover_letter" class="required">Anschreiben</label>
+                <input type="file" id="cover_letter"  name="coverLetter" accept=".pdf" required>
+                <label for="cv" class="required">Lebenslauf</label>
+                <input type="file" id="cv"  name="cv" accept=".pdf">
+                <label for="certificates" class="required">Zertifikate</label>
+                <label for="certificates" id="label_certificates">
+                    <p>Choose files</p>
+                    <input type="file" id="certificates" class="required" name="certificates[]" multiple="multiple"
+                        accept=".pdf">
+                </label>
+                <ul id="listOfChosenCetrtificates"></ul>
+            </div>
+
+            <input type="submit" value="submit" id="submit">
+        
+
+        </form>
+
+        <script>
+
+            const form = document.querySelector('#apply_form');
+            const chosenCertificates = document.getElementById("listOfChosenCetrtificates");
+            let listOfFiles = [];
+
+
+            document.getElementById("certificates").addEventListener('change', function (event) {
+                let newListOfFiles = Array.from(event.target.files);
+                newListOfFiles.forEach(file => {
+                    if (!listOfFiles.some(existingFile => existingFile.name === file.name)) {
+                        listOfFiles.push(file);
+                        let li_certificate = document.createElement("li");
+                        li_certificate.innerHTML = `<span>${file.name}</span><img src="img/close.png" class="close_item">`;
+                        chosenCertificates.appendChild(li_certificate);
+
+                        li_certificate.querySelector(".close_item").addEventListener("click", (event) => {
+                            li_certificate.remove();
+                            const indexToRemove = listOfFiles.indexOf(file);
+                            listOfFiles.splice(indexToRemove, 1);
+                        })
+
+                    } else {
+                        console.log(`Duplicate file ignored: ${file.name}`);
+                    }
+                });
+                this.value = '';
+            }
+            );
+
+
+
+
+
+
+            form.addEventListener('submit', event => {
+                event.preventDefault();
+                const formData = new FormData(form);
+                listOfFiles.forEach(file => {
+                    formData.append("certificates", file);
+                });
+                fetch("http://localhost:8080/api/apply", {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(res => {
+                        const status = res.status;
+                        console.log("Status is: " + status);
+                        return res.text().then(message => ({ status, message }));
+                    })
+                    .then(({ status, message }) => {
+
+                        const popup = document.createElement('pop-up');
+                        popup.show(message, status);
+                        document.body.appendChild(popup);
+                        form.reset();
+
+                    })
+                    .catch(err => console.error('Error:', err));
+            });
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+
+
+
+
+    </main>
+    </div>
+    <!-----------------------------------------Footer---------------------------------------------------------------------------->
+    <div id="footer"></div>
+
+
+
+    <div id="footer"></div>
+    <script type="text/javascript">
+        $(function () {
+            $('#footer').load('footer.html');
+        });
+
+    </script>
+
+</body>
+
+</html>

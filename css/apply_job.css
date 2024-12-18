@@ -1,0 +1,125 @@
+    * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        min-width: 100vw;
+
+
+    }
+
+
+    main {
+        background-color: lightcyan;
+        width: 100%;
+        height: 100%;
+        padding: 40px;
+        flex: 1;
+
+    }
+
+    .popup_container {
+        size: auto;
+        z-index: 100;
+        z-index: 20;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background-color: white;
+        border-radius: 30px;
+    }
+
+
+
+    .required::after {
+        content: " *";
+        color: red;
+
+    }
+
+    main h1 {
+        text-align: center;
+    }
+
+    #apply_form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 50px;
+        width: 100%;
+
+
+
+    }
+
+    #apply_form div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    form input,
+    select {
+        height: 25px;
+    }
+
+    form textarea {
+        height: 70px;
+    }
+
+    #submit {
+        width: fit-content;
+        padding: 10px;
+        height: 50px;
+        background-color: rgb(6, 248, 248);
+        font-size: 25px;
+        color: rgb(1, 51, 67);
+        font-weight: bold;
+        margin-top: 40px;
+        border: none;
+        align-self: center;
+        justify-self: center;
+        grid-column: 1 / -1;
+    }
+
+    #submit:hover {
+        background-color: rgb(47, 195, 249);
+        cursor: pointer;
+    }
+
+    #certificates {
+        display: none;
+    }
+
+    #label_certificates {
+        display: inline-block;
+        width: fit-content;
+        padding: 10px 15px;
+        background-color: rgb(237, 232, 232);
+        color: black;
+        border: 0.1px solid black;
+        text-align: center;
+        padding: 2px;
+    }
+
+    .close_item {
+        align-self: end;
+        height: 16px;
+        width: 16px;
+        margin-left: 2px;
+        cursor: pointer;
+    }
+
+    @media(max-width:1000px) {
+
+        #apply_form {
+            margin-top: 3vh;
+            display: flex;
+            flex-direction: column;
+        }
+    }
